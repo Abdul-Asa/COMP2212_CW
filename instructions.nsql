@@ -1,0 +1,7 @@
+-- Load the graph data from a file
+LOAD 'access.n4j';
+
+-- Select nodes with label 'Visitor' or age <= 25, output with specified fields
+SELECT ID, age, LABEL 
+FROM nodes 
+WHERE LABEL = 'Visitor' OR age <= 25;
