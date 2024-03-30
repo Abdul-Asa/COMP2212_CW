@@ -1,0 +1,5 @@
+-- Attempt to load a file without quotes
+LOAD example_graph.n4j;
+
+-- Incorrect usage of SELECT command, missing FROM keyword, and using unsupported operators
+SELECT name, age % "visitors" WHERE label == "Visitor" && age <@ 25;
