@@ -26,12 +26,11 @@ Guide to th repository's structure:
 
 ```plaintext
 ├───📁 cw-examples/
-│   └───📄 tasks.n4j
+│   └───📄 (... list of n4j files provided)
 ├───📁 misc/
-│   └───📄 instructions.pdf
+│   └───📄 (... misc files)
 ├───📁 scripts/
-│   └───📄 exampleErr.nsql
-├───📄 .DS_Store
+│   └───📄 (... example scripts of our language ending in .nsql)
 ├───📄 .gitignore
 ├───📄 Main.hs
 ├───📄 Makefile
