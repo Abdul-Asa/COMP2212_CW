@@ -25,7 +25,7 @@ NotSqlTokens.hs : NotSqlTokens.x
 
 # Clean up the directory
 clean::
-	rm -rf NotSqlTokens.hs *.hi *.o *.info
+	rm -rf NotSqlTokens.hs Main *.hi *.o *.info
 
 # Commit at regular intervals
 checkpoint:

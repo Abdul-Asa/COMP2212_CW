@@ -28,6 +28,8 @@ $white+              ; -- Whitespaces
 "TRUE"               { tok (\p s -> TokenTrue p) }
 "FALSE"              { tok (\p s -> TokenFalse p) }
 $digit+              { tok (\p s -> TokenInt p (read s)) }
+";"                  { tok (\p s -> TokenSemicolon p) }
+\'[^\']*\'           { tok (\p s -> TokenString p s) } -- Single quoted string token
 \"[^\"]*\"           { tok (\p s -> TokenString p s) } -- Simple string token
 $alpha[$alpha $digit $sym]*  { tok (\p s -> TokenIdentifier p s) }
 
@@ -55,6 +57,7 @@ data NotSqlToken =
     TokenOr AlexPosn            |
     TokenTrue AlexPosn          |
     TokenFalse AlexPosn         |
+    TokenSemicolon AlexPosn     |
     TokenInt AlexPosn Int       |
     TokenString AlexPosn String |
     TokenIdentifier AlexPosn String
@@ -80,4 +83,5 @@ tokenPosn (TokenFalse (AlexPn _ l c))         = show(l) ++ ":" ++ show(c)
 tokenPosn (TokenInt (AlexPn _ l c) _)         = show(l) ++ ":" ++ show(c)
 tokenPosn (TokenString (AlexPn _ l c) _)      = show(l) ++ ":" ++ show(c)
 tokenPosn (TokenIdentifier (AlexPn _ l c) _)  = show(l) ++ ":" ++ show(c)
+tokenPosn (TokenSemicolon (AlexPn _ l c))     = show(l) ++ ":" ++ show(c)
 }

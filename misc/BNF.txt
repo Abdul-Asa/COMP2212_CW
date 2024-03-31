@@ -1,6 +1,6 @@
 <program> ::= <statements>
 
-<statements> ::= <statement> | <statement> <statements>
+<statements> ::= <statement> ";" <statements> | <statement> ";"
 
 <statement> ::= <load_statement> | <query_statement> | <comment>
 
@@ -24,18 +24,7 @@
 
 <comment> ::= "--" <text>
 
-<identifier> ::= <letter> | <identifier> <letter> | <identifier> <digit> | <identifier> "_"
-
 <string> ::= '"' <text> '"' | "'" <text> "'"
 
 <number> ::= <digit> | <digit> <number>
 
-<letter> ::= "A" | "B" | "C" | ... | "Z" | "a" | "b" | "c" | ... | "z"
-
-<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
-
-<text> ::= <char> | <text> <char>
-
-<char> ::= <letter> | <digit> | <other_characters>
-
-<other_characters> ::= " " | "!" | "#" | "$" | "%" | "&" | "(" | ")" | "*" | "+" | "," | "-" | "." | "/" | ":" | ";" | "<" | "=" | ">" | "?" | "@" | "[" | "]" | "^" | "_" | "`" | "{" | "|" | "}" | "~"
